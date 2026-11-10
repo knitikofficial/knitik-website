@@ -5,8 +5,8 @@
 <IfModule mod_rewrite.c>
   RewriteEngine On
 
-  # Block direct web access to git metadata
-  RewriteRule ^\.git - [F,L]
+  # Block direct web access to git metadata and deploy sync state
+  RewriteRule ^(\.git|\.ftp-deploy-sync-state\.json) - [F,L]
 
   # Main-domain-only rules (never touches subdomains like erp_knitik, consultation, KnitikOS, etc.)
   RewriteCond %{HTTP_HOST} ^(www\.)?knitik\.com$ [NC]
