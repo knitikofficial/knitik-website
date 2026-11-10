@@ -1,0 +1,34 @@
+DirectoryIndex index.html index.php
+ErrorDocument 404 /404.html
+
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+</IfModule>
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Block direct web access to git metadata and local node/server manifests
+  RewriteRule ^\.git - [F,L]
+  RewriteRule ^(server\.js|package\.json|README\.md|\.gitignore)$ - [F,L]
+
+  # Legacy redirects matching server.js
+  RewriteRule ^contact(\.html)?/?$ /#about [R=301,NE,L]
+  RewriteRule ^case-studies(\.html)?/?$ /#results [R=301,NE,L]
+  RewriteRule ^terms(\.html)?/?$ /#terms-and-conditions [R=301,NE,L]
+
+  # Clean extensionless URLs (e.g. /services -> services.html)
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME}.html -f
+  RewriteRule ^(.+?)/?$ $1.html [L]
+</IfModule>
+
+<IfModule mod_headers.c>
+  <FilesMatch "\.(html|htm)$">
+    Header set Cache-Control "no-cache, must-revalidate"
+  </FilesMatch>
+  <FilesMatch "\.(png|jpg|jpeg|webp|svg|gif|ico|css|js)$">
+    Header set Cache-Control "public, max-age=604800"
+  </FilesMatch>
+</IfModule>

@@ -1,0 +1,15 @@
+# Dev backups, previews & scratch files
+*.bak
+*.log
+screenshot_*.png
+recreated_*.png
+test_logo.js
+claude_logo.png
+
+# Node / OS / Editor
+node_modules/
+.DS_Store
+Thumbs.db
+desktop.ini
+.env
+.vscode/
