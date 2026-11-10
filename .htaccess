@@ -1,6 +1,3 @@
-DirectoryIndex index.html index.php
-ErrorDocument 404 /404.html
-
 <IfModule mod_headers.c>
   Header set X-Content-Type-Options "nosniff"
 </IfModule>
@@ -8,16 +5,28 @@ ErrorDocument 404 /404.html
 <IfModule mod_rewrite.c>
   RewriteEngine On
 
-  # Block direct web access to git metadata and local node/server manifests
+  # Block direct web access to git metadata
   RewriteRule ^\.git - [F,L]
+
+  # Main-domain-only rules (never touches subdomains like erp_knitik, consultation, KnitikOS, etc.)
+  RewriteCond %{HTTP_HOST} ^(www\.)?knitik\.com$ [NC]
+  RewriteRule ^$ index.html [L]
+
+  RewriteCond %{HTTP_HOST} ^(www\.)?knitik\.com$ [NC]
   RewriteRule ^(server\.js|package\.json|README\.md|\.gitignore)$ - [F,L]
 
-  # Legacy redirects matching server.js
+  # Legacy redirects matching server.js (main domain only)
+  RewriteCond %{HTTP_HOST} ^(www\.)?knitik\.com$ [NC]
   RewriteRule ^contact(\.html)?/?$ /#about [R=301,NE,L]
+
+  RewriteCond %{HTTP_HOST} ^(www\.)?knitik\.com$ [NC]
   RewriteRule ^case-studies(\.html)?/?$ /#results [R=301,NE,L]
+
+  RewriteCond %{HTTP_HOST} ^(www\.)?knitik\.com$ [NC]
   RewriteRule ^terms(\.html)?/?$ /#terms-and-conditions [R=301,NE,L]
 
-  # Clean extensionless URLs (e.g. /services -> services.html)
+  # Clean extensionless URLs (main domain only)
+  RewriteCond %{HTTP_HOST} ^(www\.)?knitik\.com$ [NC]
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME}.html -f
