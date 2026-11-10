@@ -22,7 +22,7 @@ jobs:
           protocol: ftps
           port: 21
           security: loose
-          server-dir: ./public_html/
+          server-dir: ./
           exclude: |
             **/.git*
             **/.git*/**
@@ -31,6 +31,9 @@ jobs:
             server.js
             package.json
             README.md
+            public/**
+            public_html/**
+            **/*.bmp
             .private/**
             consultation/**
             erp_knitik/**
