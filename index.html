@@ -686,10 +686,14 @@ footer .tagline{margin-top:16px;font-size:15px;max-width:30ch}
 .lw:hover{transform:translateY(-4px);border-color:var(--violet);box-shadow:0 18px 38px -22px rgba(123,47,247,.35)}
 .lw img{max-height:76%;max-width:82%;width:auto;height:auto;object-fit:contain;border-radius:12px}
 .lw img.dark-logo{background:#140F29;padding:12px 18px}
-.gallery{columns:3 260px;column-gap:16px}
-.gallery figure{margin:0 0 16px;break-inside:avoid;border-radius:20px;overflow:hidden;position:relative;background:var(--bg-soft);border:1px dashed #D9CEF0;display:grid;place-items:center;color:#9C95B6;font-size:14px;cursor:zoom-in;transition:transform .4s var(--ease)}
-.gallery figure:hover{transform:scale(1.015)}
-.gallery figure .shard{opacity:.16}
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.gallery figure{margin:0;aspect-ratio:9/14;border-radius:22px;overflow:hidden;position:relative;background:#16112B;border:1px solid var(--line);cursor:zoom-in;box-shadow:0 18px 40px -24px rgba(22,17,43,.35);transition:transform .4s var(--ease),box-shadow .4s var(--ease);min-width:0}
+.gallery figure:hover{transform:translateY(-4px);box-shadow:0 26px 54px -24px rgba(123,47,247,.42)}
+.gallery figure img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block;transition:transform .6s var(--ease)}
+.gallery figure:hover img{transform:scale(1.04)}
+.gallery figcaption{position:absolute;inset:0;padding:18px;display:flex;flex-direction:column;justify-content:flex-end;gap:3px;background:linear-gradient(180deg,transparent 54%,rgba(16,12,33,.92) 100%);color:#fff}
+.gallery figcaption b{font-family:var(--f-display);font-size:17px;line-height:1.2}
+.gallery figcaption span{font-size:12.5px;color:rgba(240,234,252,.85);line-height:1.35}
 .masonry{columns:3 300px;column-gap:18px}
 .masonry .tcard{break-inside:avoid;margin-bottom:18px;flex:none;width:100%}
 .vids{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
@@ -751,7 +755,7 @@ footer .tagline{margin-top:16px;font-size:15px;max-width:30ch}
 
 /* lightbox */
 .lightbox{position:fixed;inset:0;z-index:90;background:rgba(20,15,41,.82);backdrop-filter:blur(6px);display:grid;place-items:center;padding:24px}
-.lightbox .inner{width:min(720px,100%);aspect-ratio:16/10;border-radius:24px;background:var(--night);color:#fff;display:grid;place-items:center;text-align:center;padding:24px;position:relative;overflow:hidden}
+.lightbox .inner{width:min(680px,100%);min-height:260px;max-height:92vh;border-radius:24px;background:var(--night);color:#fff;display:grid;place-items:center;text-align:center;padding:24px;position:relative;overflow-y:auto}
 .lightbox .x{position:absolute;top:16px;right:16px;z-index:2;width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.12);color:#fff;display:grid;place-items:center}
 .lightbox .x svg{width:18px;height:18px}
 
@@ -785,7 +789,7 @@ footer .tagline{margin-top:16px;font-size:15px;max-width:30ch}
   .cases{grid-template-columns:1fr 1fr}
   .fgrid{grid-template-columns:1fr 1fr}
   .logowall{grid-template-columns:repeat(3,1fr)}
-  .statgrid,.vals{grid-template-columns:1fr 1fr}
+  .statgrid,.vals,.gallery{grid-template-columns:1fr 1fr}
 }
 @media (max-width:980px){
   .hw-grid{grid-template-columns:minmax(0,1fr)}
@@ -797,6 +801,11 @@ footer .tagline{margin-top:16px;font-size:15px;max-width:30ch}
 @media (max-width:680px){
   body{font-size:16px}
   .bento,.ind-grid,.cases,.feats,.vids,.office,.checks,.hw-d3{grid-template-columns:1fr}
+  .gallery{gap:10px}
+  .gallery figure{border-radius:16px}
+  .gallery figcaption{padding:12px}
+  .gallery figcaption b{font-size:14px}
+  .gallery figcaption span{font-size:11px}
   .hw-req{grid-template-columns:.72fr 1.28fr;gap:10px;align-items:center}
   .hw-bubble{padding:10px 11px;min-width:0;border-radius:20px}
   .hw-bubble::before,.hw-bubble::after{display:none}
@@ -1089,8 +1098,8 @@ footer .tagline{margin-top:16px;font-size:15px;max-width:30ch}
   </section>
   <section class="section soft">
     <div class="wrap">
-      <div class="sec-head"><span class="eyebrow">Moments</span><h2>With our clients</h2><p>Shoots, strategy sessions and launch days.</p></div>
-      <div class="gallery" id="gallery"><figure style="height:220px" data-photo="0"><div class="shard" style="width:60%;height:140%;top:-20%;left:20%"></div><span style="position:relative">Client photo 1</span></figure><figure style="height:300px" data-photo="1"><div class="shard" style="width:60%;height:140%;top:-20%;left:20%"></div><span style="position:relative">Client photo 2</span></figure><figure style="height:180px" data-photo="2"><div class="shard" style="width:60%;height:140%;top:-20%;left:20%"></div><span style="position:relative">Client photo 3</span></figure><figure style="height:260px" data-photo="3"><div class="shard" style="width:60%;height:140%;top:-20%;left:20%"></div><span style="position:relative">Client photo 4</span></figure><figure style="height:340px" data-photo="4"><div class="shard" style="width:60%;height:140%;top:-20%;left:20%"></div><span style="position:relative">Client photo 5</span></figure><figure style="height:200px" data-photo="5"><div class="shard" style="width:60%;height:140%;top:-20%;left:20%"></div><span style="position:relative">Client photo 6</span></figure></div>
+      <div class="sec-head"><span class="eyebrow">Founders &amp; brands</span><h2>Brands I have worked with</h2><p>Founders behind the brands we've partnered with.</p></div>
+      <div class="gallery" id="gallery"></div>
     </div>
   </section>
   <section class="section">
@@ -1729,7 +1738,13 @@ $("#ttrack").innerHTML=TESTI.map(tcard).join("");
 $("#masonry").innerHTML=TESTI.map(tcard).join("");
 $("#badgeStars").innerHTML=stars();
 $("#vids").innerHTML=[0,1,2].map(i=>`<button class="vid" data-video="${i}"><div class="shard" style="width:80%;height:140%;top:-20%;left:${10+i*10}%"></div><span class="play">${ic("i-play",1)}</span><span style="position:relative;text-align:left"><b style="display:block;font-family:var(--f-display);font-size:20px">Client story ${i+1}</b><span style="color:var(--night-2);font-size:14px">Add a video testimonial link</span></span></button>`).join("");
-$("#gallery").innerHTML=[220,300,180,260,340,200].map((h,i)=>`<figure style="height:${h}px" data-photo="${i}"><div class="shard" style="width:60%;height:140%;top:-20%;left:20%"></div><span style="position:relative">Client photo ${i+1}</span></figure>`).join("");
+const CLIENT_PHOTOS=[
+  ["assets/clients/lakshit-sethiya.jpg","Lakshit Sethiya","Founder · Social Seller Academy"],
+  ["assets/clients/mahendra-meena.jpg","Mahendra Meena","Founder · Mahira Capital"],
+  ["assets/clients/sunil-choudhary.jpg","Sunil Choudhary","Founder · Newai Urban & Sunil Lifestyle"],
+  ["assets/clients/abhinandan-kumar.jpg","Abhinandan Kumar","Founder · Simplefloww"]
+];
+$("#gallery").innerHTML=CLIENT_PHOTOS.map(([src,name,role],i)=>`<figure data-photo="${i}" tabindex="0"><img src="${src}" alt="${name} — ${role}" loading="lazy"><figcaption><b>${name}</b><span>${role}</span></figcaption></figure>`).join("");
 
 /* cases */
 const caseHTML=c=>`<article class="case rv" data-ind="${c.ind}"><div class="head"><span class="tag">${c.ind}</span><span class="sample-tag">Sample</span></div><div class="body"><h3>${c.title}</h3><div class="metric grad-text">${c.m}<small>${c.ml}</small></div><div class="ba"><div class="b before"><span>Before</span><i style="--w:${c.before[1]}%"></i><span>${c.before[2]}</span></div><div class="b"><span>After</span><i style="--w:${c.after[1]}%"></i><span>${c.after[2]}</span></div></div><ul>${c.did.map(x=>`<li>${x}</li>`).join("")}</ul></div></article>`;
@@ -1853,7 +1868,7 @@ $("#mmClose").onclick=()=>{$("#mm").hidden=true;document.body.style.overflow=""}
 document.addEventListener("click",e=>{const b=e.target.closest("[data-copy]");if(!b)return;const lab=b.querySelector("span")||b;const old=lab.textContent;const done=()=>{lab.textContent="Number copied";setTimeout(()=>lab.textContent=old,1800)};try{navigator.clipboard.writeText(b.dataset.copy).then(done,done)}catch(_){done()}});
 
 /* lightbox for photos and videos */
-document.addEventListener("click",e=>{const f=e.target.closest("[data-photo],[data-video]");if(!f)return;$("#lbc").innerHTML=f.dataset.video!==undefined?`<b style="font-family:var(--f-display);font-size:26px">Client story ${+f.dataset.video+1}</b><p style="color:var(--night-2);margin-top:8px">Your video testimonial will play here.</p>`:`<b style="font-family:var(--f-display);font-size:26px">Client photo ${+f.dataset.photo+1}</b><p style="color:var(--night-2);margin-top:8px">Your photo will open here.</p>`;$("#lb").hidden=false});
+document.addEventListener("click",e=>{const f=e.target.closest("[data-photo],[data-video]");if(!f)return;if(f.dataset.video!==undefined){$("#lbc").innerHTML=`<b style="font-family:var(--f-display);font-size:26px">Client story ${+f.dataset.video+1}</b><p style="color:var(--night-2);margin-top:8px">Your video testimonial will play here.</p>`}else{const p=CLIENT_PHOTOS[+f.dataset.photo];if(!p)return;$("#lbc").innerHTML=`<img src="${p[0]}" alt="${p[1]} — ${p[2]}" style="width:100%;max-height:68vh;object-fit:contain;border-radius:14px;display:block"><b style="display:block;font-family:var(--f-display);font-size:22px;margin-top:14px">${p[1]}</b><p style="color:var(--night-2);margin-top:4px">${p[2]}</p>`}$("#lb").hidden=false});
 $("#lbx").onclick=()=>$("#lb").hidden=true;$("#lb").addEventListener("click",e=>{if(e.target.id==="lb")$("#lb").hidden=true});
 addEventListener("keydown",e=>{if(e.key==="Escape"){$("#lb").hidden=true;$("#mm").hidden=true;document.body.style.overflow=""}});
 
