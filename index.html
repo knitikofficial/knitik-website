@@ -596,41 +596,86 @@ footer .tagline{margin-top:16px;font-size:15px;max-width:30ch}
 .phero p{margin-top:22px;font-size:20px;color:var(--ink-2);max-width:56ch}
 
 /* services page */
-.svc-tabs{position:sticky;top:calc(76px + env(safe-area-inset-top,0px));z-index:20;display:flex;gap:8px;overflow-x:auto;padding:10px;margin-bottom:56px;scrollbar-width:none}
+.svc-tabs{position:sticky;top:calc(78px + env(safe-area-inset-top,0px));z-index:24;display:flex;gap:8px;overflow-x:auto;padding:10px 12px;margin-bottom:40px;scrollbar-width:none;border-radius:20px;background:rgba(255,255,255,.94);border:1px solid var(--line);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);box-shadow:0 16px 38px -22px rgba(20,15,41,.22)}
 .svc-tabs::-webkit-scrollbar{display:none}
-.svc-tabs button{padding:10px 18px;border-radius:999px;font-size:15px;font-weight:500;color:var(--ink-2);white-space:nowrap;transition:background .3s,color .3s}
+.svc-tabs button{padding:10px 18px;border-radius:999px;font-size:14.5px;font-weight:600;color:var(--ink-2);white-space:nowrap;transition:background .28s var(--ease),color .28s var(--ease)}
 .svc-tabs button.on,.svc-tabs button:hover{background:var(--ink);color:#fff}
-.sblock{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,5vw,72px);align-items:center;padding-block:clamp(40px,6vw,80px);border-top:1px solid var(--line);scroll-margin-top:170px}
+.sblock{display:grid;grid-template-columns:1.02fr .98fr;gap:clamp(28px,4.6vw,64px);align-items:center;padding-block:clamp(42px,6vw,76px);border-top:1px solid var(--line);scroll-margin-top:176px}
+.sblock:first-child{border-top:none;padding-top:12px}
 .sblock:nth-of-type(even) .visual{order:-1}
-.sblock .txt{display:grid;gap:18px;min-width:0}
-.sblock .idx{font-family:var(--f-mono);font-size:13px;color:var(--violet);letter-spacing:.14em}
-.sblock h2{font-size:clamp(32px,4vw,52px)}
-.sblock .desc{color:var(--ink-2);font-size:18px}
-.checks{list-style:none;padding:0;margin:6px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:10px 18px}
-.checks li{display:flex;gap:10px;align-items:flex-start;font-size:15.5px}
-.checks svg{width:18px;height:18px;flex:none;margin-top:3px;color:var(--magenta)}
-.for{display:flex;flex-wrap:wrap;gap:8px}
-.for span{font-size:13px;padding:6px 12px;border-radius:999px;border:1px solid var(--line);color:var(--ink-2)}
-.visual{position:relative;aspect-ratio:5/4;max-width:100%;border-radius:30px;overflow:hidden;background:var(--bg-soft);border:1px solid var(--line);min-width:0}
-.visual .shard{opacity:.14}
-.vbox{position:absolute;padding:16px;font-size:13px}
-.vbox b{display:block;font-family:var(--f-display);font-size:22px}
-.vbox span{color:var(--ink-2)}
-.cgrid{position:absolute;inset:12%;display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-.cgrid i{border-radius:14px;background:var(--grad);opacity:.18}
-.cgrid i:nth-child(2n){opacity:.32}
-.cgrid i:nth-child(5){opacity:.9}
-.browser{position:absolute;inset:12% 10%;background:#fff;border-radius:18px;border:1px solid var(--line);overflow:hidden;box-shadow:0 30px 60px -30px rgba(123,47,247,.4)}
-.browser .tb{height:30px;border-bottom:1px solid var(--line);display:flex;gap:6px;align-items:center;padding:0 12px}
-.browser .tb i{width:9px;height:9px;border-radius:50%;background:var(--line)}
-.browser .pg{padding:18px;display:grid;gap:10px}
-.browser .pg i{height:10px;border-radius:6px;background:var(--line)}
-.browser .pg i.h{height:22px;width:70%;background:var(--grad);opacity:.8}
-.browser .pg i.btnx{height:26px;width:34%;border-radius:99px;background:var(--ink)}
-.flow{position:absolute;inset:10%;display:grid;align-content:center;gap:14px}
-.flow .nd{display:flex;align-items:center;gap:12px;padding:12px 16px;border-radius:16px;background:#fff;border:1px solid var(--line);font-size:14px;font-weight:600}
-.flow .nd i{width:30px;height:30px;border-radius:9px;background:var(--grad);flex:none}
-.flow .nd:nth-child(2){margin-left:12%}.flow .nd:nth-child(3){margin-left:24%}.flow .nd:nth-child(4){margin-left:36%}
+.sblock .txt{display:grid;gap:16px;min-width:0}
+.svc-meta{display:flex;flex-wrap:wrap;align-items:center;gap:10px}
+.sblock .idx{font-family:var(--f-mono);font-size:12.5px;font-weight:600;color:var(--violet);letter-spacing:.14em}
+.svc-badge{font-family:var(--f-mono);font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:999px;background:var(--bg-soft);color:var(--magenta);border:1px solid #EBDDFB}
+.sblock h2{font-size:clamp(30px,3.8vw,48px);letter-spacing:-.035em;line-height:1.08}
+.sblock .desc{color:var(--ink-2);font-size:17.5px;line-height:1.6}
+.svc-simple{padding:13px 16px;border-radius:16px;background:var(--bg-soft);border:1px solid #E5DAFA;font-size:15px;color:var(--ink);line-height:1.5}
+.svc-simple strong{color:var(--violet);font-weight:700}
+.svc-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.svc-step{padding:12px 13px;border-radius:14px;background:#fff;border:1px solid var(--line);display:grid;gap:4px}
+.svc-step em{width:22px;height:22px;border-radius:50%;background:var(--grad);color:#fff;font-style:normal;font-family:var(--f-mono);font-size:11px;font-weight:800;display:grid;place-items:center}
+.svc-step b{font-size:13.5px;line-height:1.25;color:var(--ink)}
+.svc-step small{font-size:12px;color:var(--ink-2);line-height:1.35}
+.checks{list-style:none;padding:0;margin:4px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:9px 16px}
+.checks li{display:flex;gap:9px;align-items:flex-start;font-size:15px;color:var(--ink)}
+.checks svg{width:17px;height:17px;flex:none;margin-top:3px;color:var(--magenta)}
+.for{display:flex;flex-wrap:wrap;align-items:center;gap:7px}
+.for .flab{font-family:var(--f-mono);font-size:11px;font-weight:700;letter-spacing:.1em;color:var(--ink-2);margin-right:2px;border:none;padding:0}
+.for span:not(.flab){font-size:12.5px;font-weight:500;padding:5px 11px;border-radius:999px;border:1px solid var(--line);background:#fff;color:var(--ink-2)}
+.visual{position:relative;border-radius:28px;padding:24px;overflow:hidden;background:radial-gradient(circle at 86% 14%,rgba(215,45,245,.24),transparent 54%),radial-gradient(circle at 12% 88%,rgba(123,47,247,.26),transparent 58%),#16112B;border:1px solid rgba(255,255,255,.1);color:#fff;box-shadow:0 30px 70px -28px rgba(22,17,43,.58);display:grid;gap:14px;min-width:0}
+.sv-head{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.sv-pill{display:inline-flex;align-items:center;gap:7px;font-family:var(--f-mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#F3ECFF;padding:5px 11px;border-radius:999px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14)}
+.sv-pill i{width:7px;height:7px;border-radius:50%;background:#10B981}
+.sv-tag{font-family:var(--f-mono);font-size:11px;color:#86EFAC;background:rgba(16,185,129,.14);border:1px solid rgba(16,185,129,.32);padding:4px 10px;border-radius:999px}
+.sv-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:18px;padding:15px 16px;display:grid;gap:10px}
+.sv-kpis{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.sv-kpi{background:#fff;color:var(--ink);border-radius:14px;padding:12px 14px;display:grid;gap:3px}
+.sv-kpi small{font-family:var(--f-mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2)}
+.sv-kpi b{font-family:var(--f-display);font-size:20px;line-height:1.15}
+.sv-kpi em{font-style:normal;font-size:11.5px;font-weight:700;color:#059669}
+.sv-bars{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;align-items:end;height:96px;padding-top:8px}
+.sv-bar{display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%;gap:5px}
+.sv-bar i{width:100%;border-radius:7px 7px 3px 3px;background:linear-gradient(180deg,#FF2E8B,#7B2FF7)}
+.sv-bar span{font-family:var(--f-mono);font-size:9.5px;color:rgba(255,255,255,.62)}
+.sv-toast{display:flex;align-items:center;gap:10px;padding:10px 13px;border-radius:13px;background:rgba(16,185,129,.14);border:1px solid rgba(16,185,129,.35);font-size:12.5px;color:#ECFDF5}
+.sv-toast b{color:#6EE7B7;flex:none}
+.sv-cal{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}
+.sv-slot{background:#fff;color:var(--ink);border-radius:13px;padding:11px;display:grid;gap:4px}
+.sv-slot small{font-family:var(--f-mono);font-size:9.5px;font-weight:700;letter-spacing:.06em;color:var(--violet)}
+.sv-slot b{font-size:12.5px;line-height:1.2}
+.sv-slot span{font-size:11px;color:var(--ink-2)}
+.sv-slot.feat-slot{background:linear-gradient(145deg,#7B2FF7,#FF2E8B);color:#fff}
+.sv-slot.feat-slot small,.sv-slot.feat-slot span{color:rgba(255,255,255,.88)}
+.sv-pipe{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.sv-pchip{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:12px;padding:9px 10px;display:grid;gap:2px}
+.sv-pchip small{font-family:var(--f-mono);font-size:9.5px;color:#E879F9;font-weight:700}
+.sv-pchip b{font-size:12px;line-height:1.25}
+.sv-script{background:#fff;color:var(--ink);border-radius:16px;padding:14px 16px;display:grid;gap:8px}
+.sv-srow{display:grid;grid-template-columns:68px 1fr;gap:8px;align-items:baseline;font-size:12.5px;line-height:1.4;padding-bottom:7px;border-bottom:1px solid var(--line)}
+.sv-srow:last-child{padding-bottom:0;border-bottom:none}
+.sv-srow em{font-style:normal;font-family:var(--f-mono);font-size:10px;font-weight:800;color:var(--violet)}
+.sv-web{background:#fff;color:var(--ink);border-radius:18px;overflow:hidden}
+.sv-wbar{height:30px;padding:0 12px;background:#F8FAFC;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:6px}
+.sv-wbar i{width:8px;height:8px;border-radius:50%;background:#CBD5E1}
+.sv-wbar span{margin-left:auto;font-family:var(--f-mono);font-size:10px;font-weight:700;color:#059669;background:#DCFCE7;padding:2px 8px;border-radius:999px}
+.sv-wbody{padding:15px;display:grid;gap:10px}
+.sv-whero{padding:13px;border-radius:12px;background:linear-gradient(135deg,#F8F5FF,#FFF1F8);border:1px solid #EADCF9;display:grid;gap:7px}
+.sv-whero b{font-family:var(--f-display);font-size:15.5px;line-height:1.2}
+.sv-whero span{font-size:12px;color:var(--ink-2)}
+.sv-wbtn{justify-self:start;padding:6px 12px;border-radius:999px;background:var(--grad);color:#fff;font-size:11.5px;font-weight:700}
+.sv-wfeats{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}
+.sv-wfeats div{padding:8px 9px;border-radius:10px;background:#F8FAFC;border:1px solid var(--line);font-size:11px;font-weight:600;text-align:center}
+.sv-auto{display:grid;gap:9px}
+.sv-anode{display:flex;align-items:center;gap:11px;padding:11px 14px;border-radius:14px;background:#fff;color:var(--ink)}
+.sv-atime{min-width:52px;text-align:center;font-family:var(--f-mono);font-size:10.5px;font-weight:800;padding:4px 7px;border-radius:8px;background:#F3E8FF;color:#7B2FF7;flex:none}
+.sv-anode.wa .sv-atime{background:#DCFCE7;color:#047857}
+.sv-anode b{display:block;font-size:13.5px;line-height:1.2}
+.sv-anode small{display:block;font-size:11.5px;color:var(--ink-2)}
+@media (max-width:680px){
+  .svc-tabs{position:static;margin-bottom:20px;border-radius:16px;padding:8px}
+  .svc-steps,.sv-kpis,.sv-cal,.sv-pipe,.sv-wfeats{grid-template-columns:1fr}
+  .visual{padding:18px;border-radius:22px}
+}
 
 /* clients page */
 .filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:32px}
@@ -1025,8 +1070,8 @@ footer .tagline{margin-top:16px;font-size:15px;max-width:30ch}
     <div class="wrap" style="position:relative"><div class="crumb"><a href="#home" data-link="">Home</a>/<span>Services</span></div><span class="eyebrow">Our services</span><h1 style="margin-top:16px">Digital marketing services that drive <span class="grad-text">revenue</span></h1><p>Five services that plug into each other: ads bring the people, content earns their trust, the website converts them and automation follows up.</p></div>
   </div>
   <div class="wrap">
-    <div class="svc-tabs glass" id="svcTabs"><button data-go="performance-marketing" class="on">Performance Marketing (Meta Ads)</button><button data-go="social-media-management" class="">Social Media Management</button><button data-go="content-consultancy" class="">Content Creation Consultancy</button><button data-go="website-development" class="">Website Development</button><button data-go="automation" class="">Automation Services</button></div>
-    <div id="svcBlocks"><div class="sblock" id="svc-performance-marketing"><div class="txt rv"><span class="idx">SERVICE 01</span><h2>Performance Marketing (Meta Ads)</h2><p class="desc">We plan, launch and scale Meta ad campaigns around one number: your cost per lead or sale. Every account gets a funnel, a testing roadmap and daily reporting.</p><ul class="checks"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-check"></use></svg>Ad account audit</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-check"></use></svg>Funnel strategy</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-check"></use></svg>Ad creatives and copy</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-check"></use></svg>Pixel and Conversions API setup</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-check"></use></svg>A/B testing of hooks and audiences</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-check"></use></svg>Retargeting campaigns</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-check"></use></svg>Daily WhatsApp reports</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-check"></use></svg>Monthly strategy review</li></ul><div class="for"><span>Coaches &amp; Consultants</span><span>D2C Brands</span><span>Real Estate</span><span>Agencies</span></div><div><a class="btn btn-grad magnetic" href="https://api.whatsapp.com/send/?phone=917089418809&amp;text=I+want+Meta+Ads+services&amp;type=phone_number&amp;app_absent=0" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><use href="#i-wa"></use></svg>Discuss this on WhatsApp</a></div></div><div class="visual rv"><div class="shard" style="width:70%;height:130%;top:-15%;left:10%"></div><div class="glass vbox" style="top:10%;left:8%"><span>Cost per lead</span><b class="grad-text">Down every week</b></div><div class="glass vbox" style="bottom:10%;right:8%;width:60%"><div class="bars" style="height:120px"><i style="height:30%;animation-delay:0s"></i><i style="height:45%;animation-delay:0.08s"></i><i style="height:40%;animation-delay:0.16s"></i><i style="height:60%;animation-delay:0.24s"></i><i style="height:70%;animation-delay:0.32s"></i><i style="height:66%;animation-delay:0.4s"></i><i style="height:85%;animation-delay:0.48s"></i><i style="height:95%;animation-delay:0.56s"></i></div><span>Illustrative leads per week</span></div></div></div><div class="sblock" id="svc-social-media-management"><div class="txt rv"><span class="idx">SERVICE 02</span><h2>Social Media Management</h2><p class="desc">We run your Instagram, Facebook and LinkedIn end to end, so your brand shows up every week with content that matches your positioning.</p><ul class="checks"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-check"></use></svg>Monthly content calendar</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-check"></use></svg>Post and carousel design</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-check"></use></svg>Reels editing</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-check"></use></svg>Scheduling and posting</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-check"></use></svg>Comment and DM management</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-check"></use></svg>Monthly analytics report</li></ul><div class="for"><span>Coaches &amp; Consultants</span><span>D2C Brands</span><span>Real Estate</span><span>Agencies</span></div><div><a class="btn btn-grad magnetic" href="https://api.whatsapp.com/send/?phone=917089418809&amp;text=I+want+Social+Media+Management&amp;type=phone_number&amp;app_absent=0" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><use href="#i-wa"></use></svg>Discuss this on WhatsApp</a></div></div><div class="visual rv"><div class="shard" style="width:70%;height:130%;top:-15%;left:15%"></div><div class="cgrid"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div></div><div class="sblock" id="svc-content-consultancy"><div class="txt rv"><span class="idx">SERVICE 03</span><h2>Content Creation Consultancy</h2><p class="desc">For founders, coaches and creators who want to build a personal brand. We build the strategy and the scripts; you show up and shoot.</p><ul class="checks"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-check"></use></svg>Content pillars</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-check"></use></svg>Hook bank</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-check"></use></svg>Reel and video scripts</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-check"></use></svg>Shoot direction</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-check"></use></svg>Personal brand positioning</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-check"></use></svg>Performance reviews</li></ul><div class="for"><span>Coaches &amp; Consultants</span><span>D2C Brands</span><span>Real Estate</span><span>Agencies</span></div><div><a class="btn btn-grad magnetic" href="https://api.whatsapp.com/send/?phone=917089418809&amp;text=I+want+Content+Consultancy&amp;type=phone_number&amp;app_absent=0" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><use href="#i-wa"></use></svg>Discuss this on WhatsApp</a></div></div><div class="visual rv"><div class="shard" style="width:70%;height:130%;top:-15%;left:20%"></div><div class="flow"><div class="nd"><i></i>Content pillar</div><div class="nd"><i></i>Hook</div><div class="nd"><i></i>Script</div><div class="nd"><i></i>Reel that converts</div></div></div></div><div class="sblock" id="svc-website-development"><div class="txt rv"><span class="idx">SERVICE 04</span><h2>Website Development</h2><p class="desc">Websites and landing pages designed around one action, whether that's booking a call, registering for a webinar or buying a product.</p><ul class="checks"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-check"></use></svg>Landing pages</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-check"></use></svg>Business websites</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-check"></use></svg>Webinar and sales funnels</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-check"></use></svg>SEO setup</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-check"></use></svg>Speed optimisation</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-check"></use></svg>Pixel and analytics tracking</li></ul><div class="for"><span>Coaches &amp; Consultants</span><span>D2C Brands</span><span>Real Estate</span><span>Agencies</span></div><div><a class="btn btn-grad magnetic" href="https://api.whatsapp.com/send/?phone=917089418809&amp;text=I+want+Website+Development&amp;type=phone_number&amp;app_absent=0" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><use href="#i-wa"></use></svg>Discuss this on WhatsApp</a></div></div><div class="visual rv"><div class="shard" style="width:70%;height:130%;top:-15%;left:25%"></div><div class="browser"><div class="tb"><i></i><i></i><i></i></div><div class="pg"><i class="h"></i><i style="width:90%"></i><i style="width:75%"></i><i class="btnx"></i><i style="width:60%;margin-top:14px"></i><i style="width:80%"></i></div></div></div></div><div class="sblock" id="svc-automation"><div class="txt rv"><span class="idx">SERVICE 05</span><h2>Automation Services</h2><p class="desc">Every lead gets an instant reply and a follow-up sequence, so nothing slips through and your team only talks to warm prospects.</p><ul class="checks"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-check"></use></svg>WhatsApp automation</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-check"></use></svg>CRM setup</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-check"></use></svg>Lead routing</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-check"></use></svg>Follow-up sequences</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-check"></use></svg>Reminder flows for webinars</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-check"></use></svg>Reporting dashboards</li></ul><div class="for"><span>Coaches &amp; Consultants</span><span>D2C Brands</span><span>Real Estate</span><span>Agencies</span></div><div><a class="btn btn-grad magnetic" href="https://api.whatsapp.com/send/?phone=917089418809&amp;text=I+want+Automation+Services&amp;type=phone_number&amp;app_absent=0" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><use href="#i-wa"></use></svg>Discuss this on WhatsApp</a></div></div><div class="visual rv"><div class="shard" style="width:70%;height:130%;top:-15%;left:30%"></div><div class="flow"><div class="nd"><i></i>Lead fills form</div><div class="nd"><i></i>Instant WhatsApp reply</div><div class="nd"><i></i>Added to CRM</div><div class="nd"><i></i>Follow-up sequence</div></div></div></div></div>
+    <div class="svc-tabs" id="svcTabs"></div>
+    <div id="svcBlocks"></div>
   </div>
 </section>
 
@@ -1257,20 +1302,45 @@ footer .tagline{margin-top:16px;font-size:15px;max-width:30ch}
    Replace every sample entry with your real clients, testimonials and numbers. */
 const WA = "https://api.whatsapp.com/send/?phone=917089418809&text=I+want+digital+marketing+services&type=phone_number&app_absent=0";
 const SERVICES = [
-  {id:"performance-marketing", icon:"i-mega", name:"Performance Marketing (Meta Ads)", short:"Data-driven Facebook and Instagram campaigns that bring qualified leads and sales, not just clicks.",
+  {id:"performance-marketing", icon:"i-mega", badge:"Lower Cost Per Lead",
+   name:"Performance Marketing (Meta Ads)",
+   short:"Data-driven Facebook and Instagram campaigns that bring qualified leads and sales, not just clicks.",
    desc:"We plan, launch and scale Meta ad campaigns around one number: your cost per lead or sale. Every account gets a funnel, a testing roadmap and daily reporting.",
+   simple:"You stop burning budget on boosted posts — we turn Facebook & Instagram ads into a predictable daily flow of qualified buyers.",
+   steps:[["Audit & Offer Fix","Find where leads drop off before spending a rupee"],["Daily Ad Testing","Test hooks, creatives & audiences side by side"],["Scale Winners","Put budget only behind profitable ads"]],
+   forWho:["D2C Brands","Webinar Coaches","Consultants","Real Estate Projects"],
    inc:["Ad account audit","Funnel strategy","Ad creatives and copy","Pixel and Conversions API setup","A/B testing of hooks and audiences","Retargeting campaigns","Daily WhatsApp reports","Monthly strategy review"], wa:"I+want+Meta+Ads+services"},
-  {id:"social-media-management", icon:"i-share", name:"Social Media Management", short:"Consistent, on-brand content and community management that builds authority.",
+  {id:"social-media-management", icon:"i-share", badge:"Done-For-You Content",
+   name:"Social Media Management",
+   short:"Consistent, on-brand content and community management that builds authority.",
    desc:"We run your Instagram, Facebook and LinkedIn end to end, so your brand shows up every week with content that matches your positioning.",
+   simple:"We handle ideation, design, reel editing, posting and DM replies — your page looks active and trustworthy without chasing freelancers.",
+   steps:[["Monthly Calendar","Every reel, carousel & post planned 30 days ahead"],["Design & Edit","Scroll-stopping visuals matched to your brand"],["Publish & Reply","Consistent posting plus daily comment & DM handling"]],
+   forWho:["Busy Founders","Growing D2C Brands","Coaches","Clinics & Local Brands"],
    inc:["Monthly content calendar","Post and carousel design","Reels editing","Scheduling and posting","Comment and DM management","Monthly analytics report"], wa:"I+want+Social+Media+Management"},
-  {id:"content-consultancy", icon:"i-pen", name:"Content Creation Consultancy", short:"Content strategy, hooks and scripts that make your brand impossible to scroll past.",
+  {id:"content-consultancy", icon:"i-pen", badge:"Shoot 2 Hrs / Month",
+   name:"Content Creation Consultancy",
+   short:"Content strategy, hooks and scripts that make your brand impossible to scroll past.",
    desc:"For founders, coaches and creators who want to build a personal brand. We build the strategy and the scripts; you show up and shoot.",
+   simple:"Don't know what to say on camera? We research your ideal buyer, write every word & hook for you, and guide your shoots.",
+   steps:[["Dream Follower Audit","Study what your buyers actually save and share"],["ICP & Script Bank","Word-for-word hooks & reel scripts ready to read"],["Record & Grow","Simple shoot direction so reels turn viewers into leads"]],
+   forWho:["Coaches & Educators","Founders Building Authority","Consultants","Creators"],
    inc:["Content pillars","Hook bank","Reel and video scripts","Shoot direction","Personal brand positioning","Performance reviews"], wa:"I+want+Content+Consultancy"},
-  {id:"website-development", icon:"i-code", name:"Website Development", short:"Fast, conversion-focused websites and landing pages built to sell.",
+  {id:"website-development", icon:"i-code", badge:"Built To Convert",
+   name:"Website Development",
+   short:"Fast, conversion-focused websites and landing pages built to sell.",
    desc:"Websites and landing pages designed around one action, whether that's booking a call, registering for a webinar or buying a product.",
+   simple:"Slow brochure sites waste ad clicks. We build mobile-first pages designed around one clear goal — leads, bookings or sales.",
+   steps:[["Conversion Wireframe","Clear headline, proof & offer above the fold"],["Fast Mobile Build","Loads in under 1 second on 4G phones"],["Tracking & Launch","Pixel, CAPI, analytics & SEO wired cleanly"]],
+   forWho:["Webinar Funnels","Lead-Gen Campaigns","D2C Product Pages","Service Agencies"],
    inc:["Landing pages","Business websites","Webinar and sales funnels","SEO setup","Speed optimisation","Pixel and analytics tracking"], wa:"I+want+Website+Development"},
-  {id:"automation", icon:"i-bot", name:"Automation Services", short:"WhatsApp, CRM and follow-up automations that save hours and close more deals.",
+  {id:"automation", icon:"i-bot", badge:"Replies In < 5 Sec",
+   name:"Automation Services",
+   short:"WhatsApp, CRM and follow-up automations that save hours and close more deals.",
    desc:"Every lead gets an instant reply and a follow-up sequence, so nothing slips through and your team only talks to warm prospects.",
+   simple:"Leads go cold in 15 minutes. Our WhatsApp + CRM workflows reply in 5 seconds, qualify prospects and send automatic reminders.",
+   steps:[["Connect Lead Sources","Instant capture from Meta ads & website forms"],["5-Sec WhatsApp Reply","Automatic welcome message & brochure sent"],["CRM & Reminders","Tag warm prospects & send webinar/call alerts"]],
+   forWho:["High-Volume Ad Accounts","Sales Teams","Course Creators","Real Estate Realtors"],
    inc:["WhatsApp automation","CRM setup","Lead routing","Follow-up sequences","Reminder flows for webinars","Reporting dashboards"], wa:"I+want+Automation+Services"}
 ];
 const INDUSTRIES = [
@@ -1680,14 +1750,42 @@ const faqLd=document.createElement("script");faqLd.type="application/ld+json";fa
 /* services page */
 $("#svcTabs").innerHTML=SERVICES.map((s,i)=>`<button data-go="${s.id}" class="${i?'':'on'}">${s.name}</button>`).join("");
 const visuals=[
-  `<div class="glass vbox" style="top:10%;left:8%"><span>Cost per lead</span><b class="grad-text">Down every week</b></div><div class="glass vbox" style="bottom:10%;right:8%;width:60%"><div class="bars" style="height:120px">${[30,45,40,60,70,66,85,95].map((h,k)=>`<i style="height:${h}%;animation-delay:${k*.08}s"></i>`).join("")}</div><span>Illustrative leads per week</span></div>`,
-  `<div class="cgrid">${Array(9).fill("<i></i>").join("")}</div>`,
-  `<div class="flow"><div class="nd"><i></i>Content pillar</div><div class="nd"><i></i>Hook</div><div class="nd"><i></i>Script</div><div class="nd"><i></i>Reel that converts</div></div>`,
-  `<div class="browser"><div class="tb"><i></i><i></i><i></i></div><div class="pg"><i class="h"></i><i style="width:90%"></i><i style="width:75%"></i><i class="btnx"></i><i style="width:60%;margin-top:14px"></i><i style="width:80%"></i></div></div>`,
-  `<div class="flow"><div class="nd"><i></i>Lead fills form</div><div class="nd"><i></i>Instant WhatsApp reply</div><div class="nd"><i></i>Added to CRM</div><div class="nd"><i></i>Follow-up sequence</div></div>`
+  `<div class="sv-head"><span class="sv-pill"><i></i>Meta Ads Manager · Live</span><span class="sv-tag">CPL Down · ROAS Up</span></div>
+   <div class="sv-kpis"><div class="sv-kpi"><small>Cost per lead</small><b>₹180 → ₹52</b><em>-71% after testing</em></div><div class="sv-kpi"><small>Weekly leads</small><b>14 → 48 / wk</b><em>Consistent scale</em></div></div>
+   <div class="sv-card"><div class="sv-bars">${[["Wk 1",26],["Wk 2",40],["Wk 3",52],["Wk 4",68],["Wk 5",82],["Wk 6",96]].map(([w,h])=>`<div class="sv-bar"><i style="height:${h}%"></i><span>${w}</span></div>`).join("")}</div></div>
+   <div class="sv-toast"><b>WhatsApp · 9 AM</b><span>Spend: ₹2,400 · 46 Leads · CPL ₹52 ✓</span></div>`,
+  `<div class="sv-head"><span class="sv-pill"><i></i>IG · FB · LinkedIn</span><span class="sv-tag">Weekly Publishing</span></div>
+   <div class="sv-cal">
+     <div class="sv-slot feat-slot"><small>MON · REEL</small><b>Authority Hook</b><span>Builds reach &amp; trust</span></div>
+     <div class="sv-slot"><small>TUE · CAROUSEL</small><b>Step Guide</b><span>Saves &amp; shares</span></div>
+     <div class="sv-slot"><small>THU · PROOF</small><b>Client Win</b><span>Real result story</span></div>
+     <div class="sv-slot"><small>FRI · VIDEO</small><b>Myth Buster</b><span>Sparks comments</span></div>
+     <div class="sv-slot"><small>SAT · STORY</small><b>Poll + CTA</b><span>Warm DM leads</span></div>
+     <div class="sv-slot feat-slot"><small>SUN · REPORT</small><b>Growth Sync</b><span>+214% profile reach</span></div>
+   </div>
+   <div class="sv-toast"><b>Inbox &amp; DMs</b><span>Comments, tags &amp; DMs replied daily ✓</span></div>`,
+  `<div class="sv-head"><span class="sv-pill"><i></i>Content Playbook</span><span class="sv-tag">You just record</span></div>
+   <div class="sv-pipe"><div class="sv-pchip"><small>STEP 01</small><b>Dream Follower Audit</b></div><div class="sv-pchip"><small>STEP 02</small><b>ICP &amp; Hook Clarity</b></div><div class="sv-pchip"><small>STEP 03</small><b>Create Content</b></div></div>
+   <div class="sv-script">
+     <div class="sv-srow"><em>HOOK (0–3s)</em><span>"Stop boosting posts — do this 3-step funnel instead."</span></div>
+     <div class="sv-srow"><em>VALUE (3–25s)</em><span>Word-for-word talking points tailored to your buyer.</span></div>
+     <div class="sv-srow"><em>CTA (END)</em><span>"Comment GROWTH and we'll DM the full checklist."</span></div>
+   </div>
+   <div class="sv-toast"><b>Shoot Day</b><span>2 hrs / month recording · 15+ reels planned ✓</span></div>`,
+  `<div class="sv-head"><span class="sv-pill"><i></i>Mobile-First Funnel</span><span class="sv-tag">99 Page Speed</span></div>
+   <div class="sv-web"><div class="sv-wbar"><i></i><i></i><i></i><span>&lt; 1s Load · HTTPS</span></div><div class="sv-wbody"><div class="sv-whero"><b>Clear Offer Headline Above The Fold</b><span>Built around 1 goal: book a call, register or buy.</span><span class="sv-wbtn">Book Free Strategy Call →</span></div><div class="sv-wfeats"><div>₹5Cr+ Proof</div><div>Meta Pixel + CAPI</div><div>WhatsApp Sync</div></div></div></div>
+   <div class="sv-toast"><b>Conversion Focus</b><span>No bloated templates — tested to turn clicks into leads ✓</span></div>`,
+  `<div class="sv-head"><span class="sv-pill"><i></i>Zero-Leak Workflow</span><span class="sv-tag">24/7 Active</span></div>
+   <div class="sv-auto">
+     <div class="sv-anode"><span class="sv-atime">0 sec</span><div><b>New lead submits Meta Ad or website form</b><small>Captured instantly without manual spreadsheets</small></div></div>
+     <div class="sv-anode wa"><span class="sv-atime">&lt; 5 sec</span><div><b>Automatic WhatsApp reply + brochure sent</b><small>Reaches prospects while interest is highest ✓✓</small></div></div>
+     <div class="sv-anode"><span class="sv-atime">Auto</span><div><b>Synced to CRM &amp; tagged for your sales team</b><small>Warm follow-ups &amp; webinar reminders run automatically</small></div></div>
+   </div>`
 ];
-$("#svcBlocks").innerHTML=SERVICES.map((s,i)=>`<div class="sblock" id="svc-${s.id}"><div class="txt rv"><span class="idx">SERVICE 0${i+1}</span><h2>${s.name}</h2><p class="desc">${s.desc}</p><ul class="checks">${s.inc.map(x=>`<li>${ic("i-check")}${x}</li>`).join("")}</ul><div class="for">${INDUSTRIES.map(d=>`<span>${d.name}</span>`).join("")}</div><div><a class="btn btn-grad magnetic" href="https://api.whatsapp.com/send/?phone=917089418809&text=${s.wa}&type=phone_number&app_absent=0" target="_blank" rel="noopener">${ic("i-wa",1)}Discuss this on WhatsApp</a></div></div><div class="visual rv"><div class="shard" style="width:70%;height:130%;top:-15%;left:${10+i*5}%"></div>${visuals[i]}</div></div>`).join("");
-const goSvc=id=>{const el=$("#svc-"+id);if(el)el.scrollIntoView({behavior:"smooth"})};
+$("#svcBlocks").innerHTML=SERVICES.map((s,i)=>`<div class="sblock" id="svc-${s.id}"><div class="txt rv"><div class="svc-meta"><span class="idx">SERVICE 0${i+1}</span><span class="svc-badge">${s.badge}</span></div><h2>${s.name}</h2><div class="svc-simple"><strong>In simple words:</strong> ${s.simple}</div><p class="desc">${s.desc}</p><div class="svc-steps">${s.steps.map(([t,d],k)=>`<div class="svc-step"><em>0${k+1}</em><b>${t}</b><small>${d}</small></div>`).join("")}</div><ul class="checks">${s.inc.map(x=>`<li>${ic("i-check")}${x}</li>`).join("")}</ul><div class="for"><span class="flab">BEST FOR:</span>${s.forWho.map(f=>`<span>${f}</span>`).join("")}</div><div><a class="btn btn-grad magnetic" href="https://api.whatsapp.com/send/?phone=917089418809&text=${s.wa}&type=phone_number&app_absent=0" target="_blank" rel="noopener">${ic("i-wa",1)}Discuss ${s.name.replace(" (Meta Ads)","")} on WhatsApp</a></div></div><div class="visual rv">${visuals[i]}</div></div>`).join("");
+const setSvcTab=id=>$$("#svcTabs button").forEach(b=>b.classList.toggle("on",b.dataset.go===id));
+const goSvc=id=>{setSvcTab(id);const el=$("#svc-"+id);if(el)el.scrollIntoView({behavior:"smooth"})};
+const updateSvcTab=()=>{if($(".page.on")?.dataset.page!=="services")return;const y=innerHeight*0.42;let best=SERVICES[0].id,bestD=1e9;SERVICES.forEach(s=>{const el=$("#svc-"+s.id);if(!el)return;const d=Math.abs(el.getBoundingClientRect().top+el.offsetHeight*0.25-y);if(d<bestD){bestD=d;best=s.id}});setSvcTab(best)};
 $("#svcTabs").addEventListener("click",e=>{const b=e.target.closest("button");if(b)goSvc(b.dataset.go)});
 
 /* legal TOC */
@@ -1707,6 +1805,7 @@ function route(){
   if(pendingSvc&&r==="services"){const id=pendingSvc;pendingSvc=null;setTimeout(()=>goSvc(id),350)}else window.scrollTo({top:0,behavior:"instant"});
   setupReveal();
   r==="home"?updateHow():stopBelt();
+  if(r==="services")updateSvcTab();
 }
 document.addEventListener("click",e=>{
   const a=e.target.closest("[data-link]");if(!a)return;
@@ -1743,7 +1842,7 @@ addEventListener("resize",()=>tgo(Math.min(ti,maxI())));
 
 /* header, progress, fab */
 const hdr=$("#hdr"),fab=$("#fab"),prog=$("#progress");
-addEventListener("scroll",()=>{const y=scrollY;hdr.classList.toggle("scrolled",y>40);fab.classList.toggle("hide",y<300);const h=document.documentElement.scrollHeight-innerHeight;prog.style.width=(h>0?y/h*100:0)+"%";updateHow()},{passive:true});
+addEventListener("scroll",()=>{const y=scrollY;hdr.classList.toggle("scrolled",y>40);fab.classList.toggle("hide",y<300);const h=document.documentElement.scrollHeight-innerHeight;prog.style.width=(h>0?y/h*100:0)+"%";updateHow();updateSvcTab()},{passive:true});
 $("#toTop").onclick=()=>scrollTo({top:0,behavior:"smooth"});
 
 /* mobile menu */
