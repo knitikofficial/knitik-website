@@ -509,11 +509,11 @@ nav.menu a.active{color:#fff;background:var(--ink)}
 .stars{display:flex;gap:3px;color:#FF2E8B}
 .stars svg{width:17px;height:17px}
 .tcard q{font-size:18px;line-height:1.55;quotes:"\201C" "\201D"}
-.who{display:flex;gap:14px;align-items:center;margin-top:auto}
+.who{display:flex;gap:14px;align-items:flex-start;min-height:76px}
 .avatar{width:48px;height:48px;border-radius:50%;background:var(--grad);display:grid;place-items:center;color:#fff;font-family:var(--f-display);font-weight:700;flex:none}
 .who b{display:block}
 .who span{font-size:14px;color:var(--ink-2)}
-.tcard .res{align-self:flex-start;font-size:13px;font-weight:600;padding:6px 12px;border-radius:999px;background:var(--bg-soft);color:var(--violet)}
+.tcard .res{align-self:flex-start;margin-top:auto;font-size:13px;font-weight:600;padding:6px 12px;border-radius:999px;background:var(--bg-soft);color:var(--violet)}
 .tnav{display:flex;gap:10px;justify-content:flex-end;margin-top:26px;align-items:center}
 .tnav button{width:48px;height:48px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;background:#fff;transition:background .3s,color .3s}
 .tnav button:hover{background:var(--ink);color:#fff}
@@ -1290,13 +1290,10 @@ const STATS = [
   {v:300, suf:"+", l:"Campaigns launched"},
   {v:100, suf:"%", l:"Accounts with daily reporting"}
 ];
-// SAMPLE testimonials — replace with real client words, names and photos
 const TESTI = [
-  {q:"Within the first month our webinar registrations went up and the cost per lead came down. The daily reports mean I always know where my money is going.", n:"Client name", b:"Business coach", r:"Sample result tag"},
-  {q:"They rebuilt our landing page and ads together. For the first time our ads and our website felt like one system.", n:"Client name", b:"D2C skincare brand", r:"Sample result tag"},
-  {q:"The WhatsApp automation follows up with every lead instantly. Our sales team now only talks to people who are ready.", n:"Client name", b:"Real estate developer", r:"Sample result tag"},
-  {q:"Clear strategy, fast execution and honest reporting. Exactly what we wanted from a growth partner.", n:"Client name", b:"Business consultant", r:"Sample result tag"},
-  {q:"The content scripts and hooks changed how my reels perform. I finally have a system instead of guessing.", n:"Client name", b:"Fitness coach", r:"Sample result tag"}
+  {q:"Before KNITIK, our ads felt like guesswork. Sagar, Founder of KNITIK, fixed our offer and targeting first, and within 2 weeks we were getting high-quality leads. The daily updates on WhatsApp mean I always know where my money is going.", n:"Abhinandan Kumar", b:"WhatsApp Automation Service · Simple Floww", r:"High-quality leads in 2 weeks"},
+  {q:"We needed qualified registrations for our webinar without wasting budget on the wrong audience. KNITIK built a clear funnel and kept testing until it worked. They scaled our business from ₹0 monthly ad spend to ₹3 Lakh monthly ad spend.", n:"Mahendra Meena", b:"Trading Coach & Consultant · Mahira Capital", r:"Scaled ₹0 to ₹3 Lakh/mo ad spend"},
+  {q:"Sagar understood my audience better than I expected on the very first call. The webinar strategy KNITIK created feels very valuable to my audience, and they’re bringing in 200 showups in every webinar in just 2 weeks.", n:"Nidhi Kheria", b:"IBS & Mind Coach", r:"200 showups per webinar in 2 weeks"}
 ];
 // SAMPLE case studies — replace with real campaigns
 const CASES = [
@@ -1657,7 +1654,7 @@ function updateHow(){
 setHow(0);updateHow();
 
 /* testimonials */
-const tcard=t=>`<div class="tcard"><div class="stars">${stars()}</div><q>${t.q}</q><span class="res">${t.r}</span><div class="who"><div class="avatar">${t.b[0]}</div><div><b>${t.n}</b><span>${t.b}</span></div></div><span class="sample-tag" style="color:var(--ink-2);align-self:flex-start">Sample · replace</span></div>`;
+const tcard=t=>`<div class="tcard"><div class="stars">${stars()}</div><q>${t.q}</q><span class="res">${t.r}</span><div class="who"><div class="avatar">${t.n[0]}</div><div><b>${t.n}</b><span>${t.b}</span></div></div></div>`;
 $("#ttrack").innerHTML=TESTI.map(tcard).join("");
 $("#masonry").innerHTML=TESTI.map(tcard).join("");
 $("#badgeStars").innerHTML=stars();
@@ -1738,7 +1735,7 @@ function countUp(el){const s=STATS[+el.dataset.i];const t0=performance.now(),d=1
 /* testimonial slider */
 let ti=0;const per=()=>innerWidth<=680?1:innerWidth<=1100?2:3;
 const maxI=()=>Math.max(0,TESTI.length-per());
-function tgo(n){ti=(n+maxI()+1)%(maxI()+1);const c=$("#ttrack .tcard");const w=c.getBoundingClientRect().width+20;$("#ttrack").style.transform=`translateX(${-ti*w}px)`;$("#tdots").innerHTML=Array(maxI()+1).fill(0).map((_,k)=>`<i class="${k===ti?'on':''}"></i>`).join("")}
+function tgo(n){ti=(n+maxI()+1)%(maxI()+1);const c=$("#ttrack .tcard");const w=c.getBoundingClientRect().width+20;$("#ttrack").style.transform=`translateX(${-ti*w}px)`;$("#tdots").innerHTML=Array(maxI()+1).fill(0).map((_,k)=>`<i class="${k===ti?'on':''}"></i>`).join("");const nav=$(".tnav");if(nav)nav.style.display=maxI()>0?"":"none"}
 $("#tnext").onclick=()=>tgo(ti+1);$("#tprev").onclick=()=>tgo(ti-1);
 let tTimer=setInterval(()=>{if($(".page.on").dataset.page==="home")tgo(ti+1)},6000);
 let sx=null;$("#tslider").addEventListener("pointerdown",e=>sx=e.clientX);$("#tslider").addEventListener("pointerup",e=>{if(sx!==null&&Math.abs(e.clientX-sx)>40)tgo(ti+(e.clientX<sx?1:-1));sx=null});
